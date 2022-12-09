@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sheets API Quickstart</title>
+    <meta charset="utf-8" />
+  </head>
+  <script src="/index.js"></script>
+  <script async defer src=https://apis.google.com/js/api.js onload="gapiLoaded()"></script>
+    <script async defer src=https://accounts.google.com/gsi/client onload="gisLoaded()"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/card.css">
+  <body>
+      <div class="search-wrapper">
+        
+        <div class="input-holder">
+            <input type="text" class="search-input" placeholder="Type to search" id="textarea"/>
+            <button class="search-icon" onclick="searchToggle(this, event)"><span></span></button>
+        </div>
+        <span class="close" onclick="searchToggle(this, event);"></span>
+    </div>
+
+
+    <button onclick="handleAuthClick()">Login to Data Base</button>
+
+<div id="id01" class="modal">
+  
+  <div class="modal-content animate" >
+
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    <div class="container">
+      <label for="uname"><b>User name</b></label>
+      <input type="text" id="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="text"id="upsw" required>
+      <label for="uname"><b>Team Name</b></label>
+      <input type="text" id="uteam" required>
+      <label for="uname" ><b>Weight</b></label>
+      <input type="text"id="uweight"  placeholder="Enter Weight" required>
+
+      <label for="psw"><b>Size</b></label>
+      <input type="text"id="usize" placeholder="Enter Size" required>
+        
+      <button type="submit" onclick="execute()">Submit</button>
+     
+    </div>
+
+    <div class="container">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+    <script>
+    $("#textarea").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        searchData()
+    }
+    });
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+    </script>
+  </body>
+
+</html>
